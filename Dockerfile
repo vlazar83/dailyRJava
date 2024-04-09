@@ -7,5 +7,7 @@ WORKDIR /app
 # Copy the packaged Spring Boot JAR file into the container at /app
 COPY target/dailyRJava-0.0.1-SNAPSHOT.jar /app/dailyRJava.jar
 
+COPY server.p12 /app/server.p12
+
 # Specify the command to run your Spring Boot application when the container starts
 CMD ["java", "-jar", "dailyRJava.jar"]

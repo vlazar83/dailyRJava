@@ -22,12 +22,14 @@ public class ReadingController {
         this.readingRepository = repository;
     }
 
+    @CrossOrigin(origins = "https://lebeny-lutheran.hu")
     @GetMapping
     public List<Reading> getAllReadings() {
         logger.info(String.valueOf(readingRepository.findAll().get(0).getReadingYear()));
         return readingRepository.findAll();
     }
 
+    @CrossOrigin(origins = "https://lebeny-lutheran.hu")
     @GetMapping("/{id}")
     Reading getReadingById(@PathVariable Long id) {
 

@@ -2,7 +2,7 @@ version: '3'
 
 services:
   readings-postgres:
-    image: readings-postgres
+    image: dockerdoc83/readings-postgres:v1.0
     restart: always
     environment:
       POSTGRES_USER: admin
@@ -20,9 +20,9 @@ services:
       - readings-postgres
 
   dailyrjava:
-    image: dailyrjava_ssl
+    image: dockerdoc83/dailyrjava:v1.0
     restart: always
     ports:
-      - "443:443"
+      - "8086:8086"
     depends_on:
       - readings-postgres
